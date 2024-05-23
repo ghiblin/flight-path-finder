@@ -42,3 +42,17 @@ The API endpoints returns the following payload in case of success:
 ```
 
 otherwise it returns an HTTP 400 error with a description of the cause.
+
+## Tests
+
+You can check the implementation of the domain logic running
+
+```bash
+pnpm test
+```
+
+or an end-to-end test with
+
+```bash
+pnpm test:e2e
+```
