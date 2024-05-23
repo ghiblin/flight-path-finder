@@ -102,4 +102,34 @@ describe('FlightList', () => {
       expect(result.isErr()).toBeTruthy();
     });
   });
+
+  describe('fistItem', () => {
+    it('returns null if the list is empty', () => {
+      const list = FlightList.parse([]).unwrap();
+      expect(list.fistItem).toBeNull();
+    });
+
+    it('returns the first element of the list', () => {
+      const list = FlightList.parse([
+        ['IND', 'EWR'],
+        ['SFO', 'ATL'],
+      ]).unwrap();
+      expect(list.fistItem).toEqual(['IND', 'EWR']);
+    });
+  });
+
+  describe('lastItem', () => {
+    it('returns null if the list is empty', () => {
+      const list = FlightList.parse([]).unwrap();
+      expect(list.fistItem).toBeNull();
+    });
+
+    it('returns the last element of the list', () => {
+      const list = FlightList.parse([
+        ['IND', 'EWR'],
+        ['SFO', 'ATL'],
+      ]).unwrap();
+      expect(list.lastItem).toEqual(['SFO', 'ATL']);
+    });
+  });
 });

@@ -1,10 +1,10 @@
-import { Result } from '../utils/result';
+import { Result } from '../../utils/result';
 import { z } from 'zod';
 
 const itemSchema = z.array(z.string().min(3).max(3)).min(2).max(2);
 const schema = z.array(itemSchema);
 
-type FlightListItem = [string, string];
+export type FlightListItem = [string, string];
 
 export class FlightList {
   #items: FlightListItem[];
